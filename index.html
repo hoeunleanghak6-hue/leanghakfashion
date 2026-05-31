@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        
+        <div class="logo">LEANGHAK<span>FASHION</span></div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ស្វែងរកម៉ូដថ្មីៗ..." onkeyup="searchProduct()">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="header-icons">
+            <div class="cart-icon" onclick="toggleCart()">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+    <header>
+</header>
+
+
+<section class="promo-banner">
+    <div class="promo-content">
+        <span class="badge">ការផ្ដល់ជូនពិសេសប្រចាំខែ</span>
+        <h1>បញ្ចុះតម្លៃរហូតដល់ <span class="highlight">50%</span></h1>
+        <p>រាល់ការទិញសម្លៀកបំពាក់នារីចាប់ពី ២ ឈុតឡើងទៅ នឹងទទួលបានការថែមជូនកាដូពិសេស!</p>
+        <div class="promo-timer">
+            <span>បញ្ចប់ក្នុងកំឡុងពេល៖ </span>
+            <strong id="timer">23:59:59</strong>
+        </div>
+        <button class="shop-now-btn" onclick="filterProduct('women-shirt')">ទិញឥឡូវនេះ</button>
+    </div>
+    <div class="promo-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800" alt="Promotion">
+    </div>
+</section>
+
+</div>
+
+
+    <div class="filter-wrapper">
+        <div class="filter-buttons">
+            <button class="btn active" onclick="filterProduct('all')">ទាំងអស់</button>
+            <button class="btn" onclick="filterProduct('men-shirt')">អាវបុរស</button>
+            <button class="btn" onclick="filterProduct('men-pant')">ខោបុរស</button>
+            <button class="btn" onclick="filterProduct('women-shirt')">អាវនារី</button>
+            <button class="btn" onclick="filterProduct('women-pant')">ខោនារី</button>
+            
+        </div>
+    </div>
+    
+    
+
+    <div class="product-grid" id="product-display"></div>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-cart"></i> កន្ត្រកទំនិញ</h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total-info">
+                <span>តម្លៃសរុប</span>
+                <span class="price-text">$<span id="total-price">0</span></span>
+            </div>
+            <button class="checkout-btn" onclick="showCheckout()">បន្តទៅកាន់ការទូទាត់</button>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content checkout-form">
+            <span class="close-modal" onclick="closeModal('checkout-modal')">&times;</span>
+            <h2>ព័ត៌មានដឹកជញ្ជូន</h2>
+            <input type="text" id="cust-name" placeholder="ឈ្មោះអ្នកទទួល">
+            <input type="text" id="cust-phone" placeholder="លេខទូរស័ព្ទ">
+            <textarea id="cust-address" placeholder="អាសយដ្ឋាន"></textarea>
+            <button class="confirm-btn" style="background: #1a1a1a;" onclick="goToPayment()">បន្តទៅបង់ប្រាក់</button>
+        </div>
+    </div>
+    <section class="testimonials">
+    <h2 class="section-title">មតិរបស់អ្នកប្រើប្រាស់</h2>
+    <div class="testimonial-grid">
+        <div class="testi-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"សាច់ក្រណាត់ស្អាតខ្លាំង ដូចក្នុងរូបបេះបិទ! ដឹកជញ្ជូនក៏លឿនទៀត។"</p>
+            <div class="user-info">
+                <img src="/Picturecm/cm.jpg" alt="user">
+                <span>Sun KimLyy</span>
+            </div>
+        </div>
+        <div class="testi-card">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"ធ្លាប់ទិញច្រើនហាងហើយ តែហាងនេះតម្លៃសមរម្យ ហើយសេវាកម្មល្អបំផុត។"</p>
+            <div class="user-info">
+                <img src="https://i.pravatar.cc/150?u=2" alt="user">
+                <span>ចាន់ ស្រីនាថ</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('payment-modal')">&times;</span>
+            <h2 style="color: #005a88;">ABA QR Payment</h2>
+            <div class="qr-container">
+                <img src="/PictureQR/QR.jpg" alt="ABA QR">
+            </div>
+            <p>ចំនួនត្រូវបង់: <strong id="pay-amount" style="font-size: 24px;">$0</strong></p>
+            <button class="confirm-btn" onclick="finishOrder()">បានបង់រួចរាល់</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
