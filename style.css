@@ -297,13 +297,104 @@ header {
 .confirm-btn:hover { background: #00466a; transform: scale(1.02); }
 
 /* --- 8. Responsive Design --- */
+/* --- ៨. Responsive Design សម្រាប់អេក្រង់ទូរស័ព្ទ (Responsive Mobile) --- */
 @media (max-width: 768px) {
-    header { padding: 15px 5%; }
-    .search-box { display: none; }
-    .product-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 15px; }
-    .card img { height: 250px; }
-    .cart-sidebar { width: 100%; right: -100%; }
-    .modal-content { margin: 20% auto; padding: 25px; }
+    /* រៀបចំគម្លាត Header ឡើងវិញ */
+    header { 
+        padding: 12px 4%; 
+    }
+    
+    .logo {
+        font-size: 20px; /* បង្រួមអក្សរឡូហ្គោបន្តិច */
+    }
+
+    /* លាក់ប្រអប់ Search លើទូរស័ព្ទដើម្បីកុំឱ្យចង្អៀត */
+    .search-box { 
+        display: none; 
+    }
+
+    /* រៀបចំប៊ូតុងបេះដូង និងកន្ត្រកនៅ Header ឱ្យស្អាតទន្ទឹមគ្នា */
+    .header-icons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .wishlist-icon, .cart-icon {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 10px;
+        margin-right: 0; /* លុបគម្លាតចាស់ចេញ */
+    }
+
+    /* បង្ហាញផលិតផលជា ២ជួរទន្ទឹមគ្នា ពេញអេក្រង់ទូរស័ព្ទល្មមស្អាត */
+    .product-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 12px; 
+        padding: 10px 4% 60px; 
+    }
+
+    /* កែសម្រួលកាតផលិតផលលើទូរស័ព្ទ */
+    .card {
+        border-radius: 15px;
+    }
+
+    .card img { 
+        height: 200px; /* បន្ថយការកម្ពស់រូបភាពកុំឱ្យវែងពេកលើអេក្រង់តូច */
+    }
+
+    .card-info {
+        padding: 10px;
+    }
+
+    .card-info h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        /* បង្ហាញត្រឹម ២ជួរ បើឈ្មោះវែងពេក */
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .card-info .price {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .buy-btn {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .wishlist-btn {
+        width: 30px;
+        height: 30px;
+        top: 10px;
+        right: 10px;
+        font-size: 12px;
+    }
+
+    /* ធ្វើឱ្យផ្ទាំង Sidebar (ទាំង Cart និង Wishlist) រុញមកពេញអេក្រង់ទូរស័ព្ទតែម្តង */
+    .cart-sidebar { 
+        width: 100%; 
+        right: -100%; 
+    }
+    
+    .cart-sidebar.open {
+        right: 0;
+    }
+
+    .cart-header {
+        padding: 20px;
+    }
+
+    /* ផ្ទាំងបំពេញព័ត៌មាន (Modal) ឱ្យដកឃ្លាតពីគែមអេក្រង់បន្តិច */
+    .modal-content { 
+        margin: 25% auto; 
+        padding: 20px; 
+        width: 92%;
+    }
+}
 }
 /* --- ផ្នែក Promotion Banner (Full CSS) --- */
 .promo-banner {
